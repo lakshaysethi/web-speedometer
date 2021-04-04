@@ -32,10 +32,10 @@ function geosuccess(event) {
      console.log('geosuccess');
 
     // var heading = Math.round(event.coords.heading);
-    var speed = Math.round(event.coords.speed);
+    var speed = Math.round(event.coords.speed)*3.6;
     var accuracy = Math.round(event.coords.accuracy);
     $("#debugoutput").html("<h1>  Speed: " + speed   
-                            + " m/s"
+                            + " KM/H"
                             +" </br> "
                             // +"compass value: "
                             // + heading 
