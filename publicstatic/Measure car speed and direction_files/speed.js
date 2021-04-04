@@ -32,9 +32,9 @@ function geosuccess(event) {
      console.log('geosuccess');
 
     // var heading = Math.round(event.coords.heading);
-    var speed = Math.round(event.coords.speed)*3.6;
+    var speedKMPH = Math.round(event.coords.speed)*3.6;
     var accuracy = Math.round(event.coords.accuracy);
-    $("#debugoutput").html("<h1>  Speed: " + speed   
+    $("#debugoutput").html("<h1>  Speed: " + speedKMPH   
                             + " KM/H"
                             +" </br> "
                             // +"compass value: "
@@ -51,10 +51,10 @@ function geosuccess(event) {
     //    moveCompassNeedle(heading);
     // }
 
-    if (speed != null) {
+    if (speedKMPH != null) {
         // update the speed
 
-        moveSpeed(speed);
+        moveSpeed(speedKMPH*0.384);
     }
 }
 
