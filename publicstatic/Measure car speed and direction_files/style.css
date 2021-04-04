@@ -1,0 +1,15 @@
+.speed-preset{
+    width: 50px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    border: solid crimson 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 900;
+    display: inline-block;
+    border-radius: 50px;
+}
+.speed-buttons{
+    text-align: center;
+}
