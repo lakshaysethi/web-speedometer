@@ -22,7 +22,7 @@ function initGeo() {
             timeout:600
         }
     );
-
+    //tests
     //moveSpeed(Math.random()*100);
     //moveCompassNeedle(56);
 }
@@ -31,16 +31,25 @@ var count = 0;
 function geosuccess(event) {
      console.log('geosuccess');
 
-    var heading = Math.round(event.coords.heading);
+    // var heading = Math.round(event.coords.heading);
     var speed = Math.round(event.coords.speed);
     var accuracy = Math.round(event.coords.accuracy);
-    $("#debugoutput").html("<h1>  Speed: " + speed   + " m/s </br> compass value: " + heading +  "</br>updated: " + count++ + " times </br> accuracy:"+ accuracy+" meters </h1>");
+    $("#debugoutput").html("<h1>  Speed: " + speed   
+                            + " m/s"
+                            +" </br> "
+                            // +"compass value: "
+                            // + heading 
+                            +  "</br>updated: " 
+                            + count++ 
+                            + " times </br> accuracy:"
+                            + accuracy
+                            +" meters </h1>");
 
     console.log(event.coords)
 
-    if (heading != null) {
-       moveCompassNeedle(heading);
-    }
+    // if (heading != null) {
+    //    moveCompassNeedle(heading);
+    // }
 
     if (speed != null) {
         // update the speed
@@ -50,21 +59,21 @@ function geosuccess(event) {
 }
 
 var currentCompassPosition =  {property: 0};
-function moveCompassNeedle(heading) {
+// function moveCompassNeedle(heading) {
 
-    // we use a svg transform to move to correct orientation
-    var translateValue = "translate(225,231)";
-    var to = {property: heading};
+//     // we use a svg transform to move to correct orientation
+//     var translateValue = "translate(225,231)";
+//     var to = {property: heading};
 
-    // stop the current animation and run to the new one
-    $(currentCompassPosition).stop().animate(to, {
-        duration: 2000,
-        step: function() {
-            $("#compass").attr("transform", translateValue
-                + " rotate(" + this.property + ")")
-        }
-    });
-}
+//     // stop the current animation and run to the new one
+//     $(currentCompassPosition).stop().animate(to, {
+//         duration: 2000,
+//         step: function() {
+//             $("#compass").attr("transform", translateValue
+//                 + " rotate(" + this.property + ")")
+//         }
+//     });
+// }
 
 var currentSpeed = {property: 0};
 function moveSpeed(speed) {
