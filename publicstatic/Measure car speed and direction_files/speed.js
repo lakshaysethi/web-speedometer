@@ -56,7 +56,7 @@ function geosuccess(event) {
     if (currentSpeedKMPH != null) {
         // update the speed
 
-        moveSpeed(currentSpeedKMPH*0.384);
+        moveSpeed(currentSpeedKMPH);// this expects degrees 360
     }
 }
 
@@ -78,11 +78,11 @@ var currentCompassPosition =  {property: 0};
 // }
 
 var currentSpeedforanimaton = {property: 0};
-function moveSpeed(speed) {
-
+function moveSpeed(currentSpeedKMPH) {
+    var degrees =currentSpeedKMPH+50
     // we use a svg transform to move to correct orientation
     var translateValue  = "translate(171,157)";
-    var to = {property: Math.round(speed*3.6)};
+    var to = {property: Math.round(degrees)};
 
     // stop the current animation and run to the new one
     $(currentSpeedforanimaton).stop().animate(to, {
@@ -132,8 +132,6 @@ function playAlarm(){
 function stopAlarm(){
     audio.pause()
 }
-
-
 
 
 
