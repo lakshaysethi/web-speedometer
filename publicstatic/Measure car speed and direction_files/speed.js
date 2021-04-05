@@ -36,14 +36,15 @@ function geosuccess(event) {
     var accuracy = Math.round(event.coords.accuracy);
     $("#debugoutput").html("<h1>  Speed: " + currentSpeedKMPH   
                             + " KM/H"
-                            +" </br> "
+                            // +" </br> "
                             // +"compass value: "
                             // + heading 
-                            +  "</br>updated: " 
-                            + count++ 
-                            + " times </br> accuracy:"
+                          
+                            + " </br> accuracy:"
                             + accuracy
-                            +" meters </h1>");
+                            +" meters </h1>"
+                             +  "</br><small>updated: " 
+                            + count++  +" times</small");
 
     console.log(event.coords)
 
