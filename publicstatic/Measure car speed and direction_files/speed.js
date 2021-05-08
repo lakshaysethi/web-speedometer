@@ -108,10 +108,10 @@ const speedlimit80= document.getElementById("s80")
 const speedlimit100 = document.getElementById("s100")
 const speedlimit30 = document.getElementById("s30")
 
-speedlimit100.addEventListener('click',()=>currentSpeedLimit=100)
+speedlimit100.addEventListener('click',()=>currentSpeedLimit=102)
 speedlimit80.addEventListener('click',()=>currentSpeedLimit=82)
-speedlimit50.addEventListener('click',()=>currentSpeedLimit=52)
-speedlimit30.addEventListener('click',()=>currentSpeedLimit=32)
+speedlimit50.addEventListener('click',()=>currentSpeedLimit=51)
+speedlimit30.addEventListener('click',()=>currentSpeedLimit=30)
 
 
 setInterval(soundAlarm,500)
