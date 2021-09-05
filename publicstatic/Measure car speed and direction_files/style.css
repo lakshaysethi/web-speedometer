@@ -13,3 +13,15 @@
 .speed-buttons{
     text-align: center;
 }
+
+h1{
+    font-size: 12rem;
+
+}
+.current-speed,h1,#debugoutput{
+    background: black;
+    color: aqua;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}

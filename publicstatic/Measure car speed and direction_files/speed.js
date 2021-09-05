@@ -33,26 +33,19 @@ function geosuccess(event) {
 
     // var heading = Math.round(event.coords.heading);
     currentSpeedKMPH = Math.round(event.coords.speed)*3.6;
+    currentSpeedKMPH = Math.round(currentSpeedKMPH * 10) / 10
     var accuracy = Math.round(event.coords.accuracy);
-    $("#debugoutput").html("<h1>  Speed: " + currentSpeedKMPH   
-                            + " KM/H"
-                            // +" </br> "
-                            // +"compass value: "
-                            // + heading 
-                          
-                            + " </br> accuracy:"
+    $("#debugoutput").html("<div class ='current-speed'><h1> " + currentSpeedKMPH   
+                            + " </h1></div>KM/H "
+
+                            + " </br> <h4>accuracy:"
                             + accuracy
-                            +" meters </h1>"
+                            +" meters </h4>"
                              +  "</br><small>updated: " 
                             + count++  +" times</small");
 
     console.log(event.coords)
 
-    // if (heading != null) {
-
-
-    //    moveCompassNeedle(heading);
-    // }
 
     if (currentSpeedKMPH != null) {
         // update the speed
@@ -108,10 +101,18 @@ const speedlimit80= document.getElementById("s80")
 const speedlimit100 = document.getElementById("s100")
 const speedlimit30 = document.getElementById("s30")
 
-speedlimit100.addEventListener('click',()=>currentSpeedLimit=102)
-speedlimit80.addEventListener('click',()=>currentSpeedLimit=82)
-speedlimit50.addEventListener('click',()=>currentSpeedLimit=51)
-speedlimit30.addEventListener('click',()=>currentSpeedLimit=30)
+const infocurrlim = document.getElementsByClassName("info-curr-lim")[0]
+
+function updateSpeedLimit(lim){
+    currentSpeedLimit= lim;
+    infocurrlim.innerHTML = 'set limit:'+ lim
+    
+}
+
+speedlimit100.addEventListener('click',()=>{updateSpeedLimit(102)})
+speedlimit80.addEventListener('click',()=>{updateSpeedLimit(82)})
+speedlimit50.addEventListener('click',()=>{updateSpeedLimit(51)})
+speedlimit30.addEventListener('click',()=>{updateSpeedLimit(30)})
 
 
 setInterval(soundAlarm,500)
