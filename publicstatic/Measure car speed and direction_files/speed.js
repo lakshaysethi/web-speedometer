@@ -99,6 +99,8 @@ let currentSpeedLimit = 50;
 const speedlimit50= document.getElementById("s50")
 const speedlimit80= document.getElementById("s80")
 const speedlimit100 = document.getElementById("s100")
+const increaselimitbtn = document.getElementById("inc-s")
+const decreaselimitbtn = document.getElementById("dec-s")
 const speedlimit30 = document.getElementById("s30")
 
 const infocurrlim = document.getElementsByClassName("info-curr-lim")[0]
@@ -110,6 +112,8 @@ function updateSpeedLimit(lim){
 }
 
 speedlimit100.addEventListener('click',()=>{updateSpeedLimit(102)})
+increaselimitbtn.addEventListener('click',()=>{updateSpeedLimit(currentSpeedLimit+1)})
+decreaselimitbtn.addEventListener('click',()=>{updateSpeedLimit(currentSpeedLimit-1)})
 speedlimit80.addEventListener('click',()=>{updateSpeedLimit(82)})
 speedlimit50.addEventListener('click',()=>{updateSpeedLimit(51)})
 speedlimit30.addEventListener('click',()=>{updateSpeedLimit(30)})
