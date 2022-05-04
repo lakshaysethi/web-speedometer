@@ -97,6 +97,7 @@ function geofailure(event) {
 
 let currentSpeedLimit = 50;
 const speedlimit50= document.getElementById("s50")
+const speedlimit60= document.getElementById("s60")
 const speedlimit80= document.getElementById("s80")
 const speedlimit100 = document.getElementById("s100")
 const increaselimitbtn = document.getElementById("inc-s")
@@ -115,8 +116,9 @@ speedlimit100.addEventListener('click',()=>{updateSpeedLimit(102)})
 increaselimitbtn.addEventListener('click',()=>{updateSpeedLimit(currentSpeedLimit+1)})
 decreaselimitbtn.addEventListener('click',()=>{updateSpeedLimit(currentSpeedLimit-1)})
 speedlimit80.addEventListener('click',()=>{updateSpeedLimit(82)})
-speedlimit50.addEventListener('click',()=>{updateSpeedLimit(51)})
-speedlimit30.addEventListener('click',()=>{updateSpeedLimit(30)})
+speedlimit50.addEventListener('click',()=>{updateSpeedLimit(55)})
+speedlimit60.addEventListener('click',()=>{updateSpeedLimit(65)})
+speedlimit30.addEventListener('click',()=>{updateSpeedLimit(32)})
 
 
 setInterval(soundAlarm,500)
